@@ -1,7 +1,7 @@
 FROM andylsr/jupyter3:lab-with-scala
 
 RUN apt-get update && apt-get install -y libkrb5-dev && \
-    python3 -m pip install --no-cache-dir sparkmagic && \
+    python3 -m pip install --no-cache-dir sparkmagic -i https://mirrors.aliyun.com/pypi/simple/ && \
     jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     jupyter labextension install "@jupyter-widgets/jupyterlab-manager" && \
     cd $(pip show sparkmagic | awk '{ if(/Location/){print} }' | awk '{ print $2 }') && \
