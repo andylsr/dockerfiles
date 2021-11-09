@@ -10,4 +10,4 @@ RUN apt-get update && apt-get install -y libkrb5-dev && \
     jupyter-kernelspec install sparkmagic/kernels/sparkrkernel && \
     jupyter serverextension enable --py sparkmagic
 
-VOLUME ["~/.sparkmagic/"]
+VOLUME ["/root/.sparkmagic/"]
