@@ -1,4 +1,4 @@
-FROM jupyterhub/jupyterhub:1.4
+FROM jupyterhub/jupyterhub:1.5
 
 ADD create_user.sh .
 
