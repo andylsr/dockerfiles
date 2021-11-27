@@ -1,6 +1,6 @@
-FROM andylsr/jupyter3:lab-with-scala
+FROM andylsr/devtools2022:jupyterlab
 
-RUN apt-get update && apt-get install -y libkrb5-dev && \
+RUN apt-get update && apt-get install -y libkrb5-dev && apt-get clean && \
     python3 -m pip install --no-cache-dir sparkmagic -i https://mirrors.aliyun.com/pypi/simple/ && \
     jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
     jupyter labextension install "@jupyter-widgets/jupyterlab-manager" && \
