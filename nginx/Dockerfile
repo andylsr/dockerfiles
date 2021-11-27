@@ -1,3 +1,6 @@
-FROM nginx:1.21.3
+FROM centos:7
 
-RUN apt-get update && apt-get install -y vim git tree && apt-get clean
+RUN yum install -y epel-release && yum install -y nginx nginx-all-modules && yum clean all && \
+    ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+CMD ["nginx" "-g" "daemon off;"]
